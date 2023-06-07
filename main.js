@@ -28,6 +28,21 @@ const sizeValue = document.getElementById("sizeValue");
 const sizeSlider = document.getElementById("sizeSlider");
 const grid = document.getElementById("grid");
 
+colorPicker.oninput =(e)=>setCurrentColor(e.target.value)
+colorBtn.onclick = () => setCurrentMode("color")
+rainbowBtn.onclick = () => setCurrentMode("rainbow")
+eraserBtn.onclick = () => setCurrentMode("eraser")
+clearBtn.onclick = ()=> reloadGrid()
+sizeSlider.onmousemove = (e) => updateSizeValue(e.target.value)
+sizeSlider.onchange = (e)=> changeSize(e.target.value)
+
+
+
+
+
+
+
+
 function activateButton(newMode) {
   if (currentMode === "rainbow") {
     rainbowBtn.classList.remove("active");
